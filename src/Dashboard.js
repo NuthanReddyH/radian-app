@@ -8,22 +8,39 @@ import axios from 'axios';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      file: "bulkfile.xlsx",
+      email: ""
+    }
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-      let input  = document.getElementById("file");
-      let file = input.files[0];
-      console.log(file);
-    let form = new FormData();
-    form.append("excel",input.files[0]);    
-    axios.post('/user', form)
-    .then((response) => {
-      console.log(response);
+
+  onChange = (e) => {
+    this.setState({
+      email: e.target.value
     })
-    .catch( (error) => {
-      console.log(error);
-    });
+
+  }
+  onSubmit({value}) {
+    console.log("value");
+    // let file = this.state.file;
+    // if(file.indexOf('xlsx') > 0) {
+    //       this.props.history.push('/home');
+    // } else {
+    //   this.props.history.push('/error');
+    // }
+            // let form = {
+    //   fileName: this.state.file,
+    //   email: this.state.email
+    // }  
+    // axios.post('/user', form)
+    // .then((response) => {
+    //   console.log(response);
+    // })
+    // .catch( (error) => {
+    //   console.log(error);
+    // });
   }
   render() {
     return (
@@ -35,8 +52,8 @@ class Dashboard extends Component {
       <hr />
       <hr />
       <div className="mainContainer">
-        <div className="fileInput"><strong>Select file to run * :  </strong><input type="file" id="file" /></div>
-        <div className="fileInput"><strong>Enter the email address </strong>to be notified after the completion of the run:  <input type="email" /></div>
+        <div className="fileInput"><strong>Select file to run * :  </strong><input className="file" type="text" value={this.state.file}  readOnly/></div>
+        <div className="fileInput"><strong>Enter the email address </strong>to be notified after the completion of the run:  <input type="email" value={this.state.email} onChange={this.onChange} /></div>
 
         <div><input className="submitButton" type="button" value="upload" onClick={this.onSubmit} /></div>
         </div>

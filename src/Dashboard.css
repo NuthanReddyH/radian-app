@@ -1,8 +1,15 @@
 .fileInput {
     padding-bottom: 10px;
 }
+.file {
+    background-color: lightgrey;
+}
 .submitButton {
     padding: 10px 15px 10px 15px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    font-size: 16px;
+
 }
 .mainContainer {
     padding-left: 10%;

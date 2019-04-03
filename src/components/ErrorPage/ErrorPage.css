@@ -1,4 +1,13 @@
 .errorContainer {
     color: red;
     font-size: 14px;
+    padding-bottom: 15px;
+}
+
+.buttonType {
+  padding-bottom: 15px;
+}
+.link {
+  font-size: 12px;
+font-family: auto;
 }

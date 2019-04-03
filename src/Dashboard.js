@@ -2,29 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import './Dashboard.css';
 import radianLogo from './assets/images/radian.jpg'
-import axios from 'axios';
+import HistoryTable from './components/HistoryTable/Historytable';
+
 
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-      let input  = document.getElementById("file");
-      let file = input.files[0];
-      console.log(file);
-    let form = new FormData();
-    form.append("excel",input.files[0]);    
-    axios.post('/user', form)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch( (error) => {
-      console.log(error);
-    });
-  }
   render() {
     return (
       <div>
@@ -34,11 +20,11 @@ class Dashboard extends Component {
       </div>
       <hr />
       <hr />
+      <div className="header1">
+        Load History
+      </div>
       <div className="mainContainer">
-        <div className="fileInput"><strong>Select file to run * :  </strong><input type="file" id="file" /></div>
-        <div className="fileInput"><strong>Enter the email address </strong>to be notified after the completion of the run:  <input type="email" /></div>
-
-        <div><input className="submitButton" type="button" value="upload" onClick={this.onSubmit} /></div>
+        <HistoryTable />
         </div>
       </div>
     );

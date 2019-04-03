@@ -10,7 +10,7 @@ class HistoryTable extends Component {
     return (
         <Table>
         <thead>
-          <tr>
+          <tr className="tableheader">
             <th>Run#</th>
             <th>Date</th>
             <th>Number of Records</th>

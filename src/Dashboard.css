@@ -5,7 +5,13 @@
     padding: 10px 15px 10px 15px;
 }
 .mainContainer {
-    padding-top: 10%;
+    padding-top: 40px;
+}
+.text {
+    float: left;
+}
+.iconfield {
+    float: right;
 }
 
 body { 
@@ -16,6 +22,17 @@ body {
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
+    padding: 10px 10px;
+}
+.caretDown {
+    width: 1.625em;
+    height: 1.5rem;
+}
+.header1 {
+    margin-top: 15%;
+    overflow: hidden;
+    background-color: dimgrey;
+    color: white;
     padding: 10px 10px;
 }
   

@@ -4,7 +4,7 @@ import './Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import radianLogo from './assets/images/radian.jpg'
-import caretdown from './assets/images/caretdown.png';
+//import caretdown from './assets/images/caretdown.png';
 import HistoryTable from './components/HistoryTable/Historytable';
 
 

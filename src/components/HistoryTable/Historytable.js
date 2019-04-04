@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import { data } from '../../mockdata/mock';
 
 class HistoryTable extends Component {
-  constructor(props) {
-    super(props);
+  
+  renderTable = () => {
+      
+         return data.map((item,index) => {
+              return (
+                <tr>
+                <th scope="row">{item["run#"]}</th>
+                <td>{item.date}</td>
+                <td>{item.numofrecords}</td>
+                <td>{item.status}</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              )
+          });
+      
   }
 
   render() {
@@ -19,27 +33,7 @@ class HistoryTable extends Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Run#1</th>
-            <td>02/01/2019</td>
-            <td>165,000</td>
-            <td>In Progress</td>
-            <td><button type="button">View</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Run#2</th>
-            <td>02/01/2019</td>
-            <td>165,000</td>
-            <td>Loaded</td>
-            <td><button type="button">View</button></td>
-          </tr>
-          <tr>
-            <th scope="row">Run#3</th>
-            <td>02/01/2019</td>
-            <td>165,000</td>
-            <td>Data Quality Failure</td>
-            <td><button type="button">View</button></td>
-          </tr>
+          {this.renderTable()}
         </tbody>
       </Table>
     );

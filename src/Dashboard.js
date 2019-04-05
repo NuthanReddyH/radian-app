@@ -4,8 +4,10 @@ import './Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import radianLogo from './assets/images/radian.jpg'
+import axios from 'axios';
 //import caretdown from './assets/images/caretdown.png';
 import HistoryTable from './components/HistoryTable/Historytable';
+import Home from './components/Home/Home';
 
 
 
@@ -18,6 +20,11 @@ class Dashboard extends Component {
   }
    
   showHistory = () => {
+    // axios.get(`http://10.24.18.62:8081/rvp/bbpdbloader/auditinfo`)
+    //   .then(res => {
+    //     console.log(res.data);
+    //   })
+
     this.setState({
       onShow: !this.state.onShow
     })

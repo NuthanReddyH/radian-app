@@ -1,3 +1,7 @@
-.thead tr {
+.tableheader {
     background-color: lightgrey;
+}
+
+.status {
+    color: red;
 }

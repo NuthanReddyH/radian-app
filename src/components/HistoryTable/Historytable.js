@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import './HistoryTable.css';
 import { data } from '../../mockdata/mock';
 
 class HistoryTable extends Component {
@@ -7,12 +8,13 @@ class HistoryTable extends Component {
   renderTable = () => {
       
          return data.map((item,index) => {
+        
               return (
                 <tr>
                 <th scope="row">{item["run#"]}</th>
                 <td>{item.date}</td>
                 <td>{item.numofrecords}</td>
-                <td>{item.status}</td>
+                <td className={item.flag ? '' : 'status'}>{item.status}</td>
                 <td><button type="button">View</button></td>
               </tr>
               )

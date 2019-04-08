@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import './Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import radianLogo from './assets/images/radian.jpg'
-//import axios from 'axios';
+import axios from 'axios';
+import { getData } from './actions.js';
 //import caretdown from './assets/images/caretdown.png';
 import HistoryTable from './components/HistoryTable/Historytable';
 import Home from './components/Home/Home';
@@ -12,26 +15,28 @@ import Home from './components/Home/Home';
 
 
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      onShow: false
+      onShow: false,
+      auditData: []
     }
   }
    
   showHistory = () => {
-    // axios.get(`http://10.24.18.62:8081/rvp/bbpdbloader/auditinfo`)
+    // axios.get(`https://jsonplaceholder.typicode.com/todos/1`)
     //   .then(res => {
-    //     console.log(res.data);
+        
     //   })
-
+    //this.props.getData();
     this.setState({
       onShow: !this.state.onShow
     })
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
       <div className="header">
@@ -53,5 +58,17 @@ class Dashboard extends Component {
   }
 }
 export default Dashboard;
+// const mapStateToProps = state => ({
+//   auditData: state.data
+// });
+// const mapDispatchToProps = {
+//   getData
+// };
+// export default withRouter(
+//   connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+//   )(Dashboard)
+// );
 
 

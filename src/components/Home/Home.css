@@ -6,8 +6,13 @@
     width: 20% !important;
 }
 .loadButton {
-    margin-right: 5%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 5%;
 }
-.breadcrumbStyle {
-    background-color: antiquewhite;
+.cancelButton {
+    width: 5%;
+}
+.breadcrumb {
+    background-color: white !important;
 }

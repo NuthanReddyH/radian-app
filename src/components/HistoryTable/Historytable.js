@@ -4,6 +4,9 @@ import './HistoryTable.css';
 import { data } from '../../mockdata/mock';
 
 class HistoryTable extends Component {
+  constructor(props) {
+    super(props);
+  }
   
   renderTable = () => {
       

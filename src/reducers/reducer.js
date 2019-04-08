@@ -1,4 +1,4 @@
-import { SEND_DATA } from '../actions'
+import { SEND_DATA , GET_AUDIT_INFO} from '../actions'
 
 const initialState = {
     data: []
@@ -9,6 +9,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           data: action.payload
+        };
+        case GET_AUDIT_INFO:
+        return {
+          ...state,
+          auditData: action.payload
         };
       default:
         return state;

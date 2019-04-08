@@ -13,7 +13,10 @@ class Home extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
   onSubmit(e) {
-    
+    console.log("loaded");
+  }
+  onRemove = () => {
+    console.log("canceled");
   }
   
   render() {
@@ -39,7 +42,7 @@ class Home extends Component {
           </Col>
         </FormGroup>
         <Button onClick={this.onSubmit}className="loadButton" color="primary">Load</Button>
-        <Button  className="cancelButton" color="primary">Cancel</Button>
+        <Button onClick={this.onRemove} className="cancelButton" color="primary">Cancel</Button>
         </Form>
     
       </Jumbotron>

@@ -29,7 +29,7 @@ body {
     height: 1.5rem;
 }
 .header1 {
-    margin-top: 15%;
+    /* margin-top: 15%; */
     overflow: hidden;
     background-color: dimgrey;
     color: white;

@@ -1,0 +1,13 @@
+.pathInput {
+    border-radius: 5px;
+    width: 18%;
+}
+.replineInput {
+    width: 20% !important;
+}
+.loadButton {
+    margin-right: 5%;
+}
+.breadcrumbStyle {
+    background-color: antiquewhite;
+}

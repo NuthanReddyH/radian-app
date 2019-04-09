@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import './HistoryTable.css';
-import { data } from '../../mockdata/mock';
+
 
 class HistoryTable extends Component {
   constructor(props) {
     super(props);
   }
-  
+   
   renderTable = () => {
       
-         return data.map((item,index) => {
+         return this.props.auditData.map((item,index) => {
         
               return (
                 <tr>
-                <th scope="row">{item["run#"]}</th>
-                <td>{item.date}</td>
-                <td>{item.numofrecords}</td>
-                <td className={item.flag ? '' : 'status'}>{item.status}</td>
+                <th scope="row">{item.repline_versionId}</th>
+                <td>{item.status}</td>
+                <td>{item.transactionStage}</td>
+                <td>{item.updatedBy}</td>
+                <td>{item.updatedTime}</td>
                 <td><button type="button">View</button></td>
               </tr>
               )
@@ -30,10 +31,11 @@ class HistoryTable extends Component {
         <Table>
         <thead>
           <tr className="tableheader">
-            <th>Run#</th>
-            <th>Date</th>
-            <th>Number of Records</th>
+            <th>VersionID</th>
             <th>Status</th>
+            <th>Transaction Stage</th>
+            <th>UpdatedBy</th>
+            <th>Updated Time</th>
             <th>Log</th>
           </tr>
         </thead>

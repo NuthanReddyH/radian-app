@@ -10,10 +10,11 @@ export const setData = (typeList) => dispatch => {
 };
 
 export const getData = () => dispatch => {
-    axios.get(`https://jsonplaceholder.typicode.com/todos/1`)
+    console.log("actions");
+        axios.get(`https://jsonplaceholder.typicode.com/todos/1`)
       .then(res => {
-        console.log(res.data);
-        dispatch({ type: GET_AUDIT_INFO, payload: res.data});
+        if(!res.error) {
+            dispatch({ type: GET_AUDIT_INFO, payload: res.data});
+        }        
       })
-    
 }

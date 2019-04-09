@@ -1,9 +1,11 @@
 import { SEND_DATA , GET_AUDIT_INFO} from '../actions'
 
 const initialState = {
-    data: []
+    data: [],
+    auditData: []
 }
 export default function(state = initialState, action) {
+  console.log(action);
     switch (action.type) {
       case SEND_DATA:
         return {
@@ -11,7 +13,9 @@ export default function(state = initialState, action) {
           data: action.payload
         };
         case GET_AUDIT_INFO:
+        console.log(action.payload);
         return {
+          
           ...state,
           auditData: action.payload
         };

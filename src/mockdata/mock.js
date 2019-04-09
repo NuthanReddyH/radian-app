@@ -1,42 +1,30 @@
 export const data = [
-    {
-      "run#": "Run#1",
-      "date": "02/01/2019",
-      "numofrecords": "165,000",
-      "status": "In Progress",
-      "log": "",
-      "flag": true
-  },
   {
-      "run#": "Run#2",
-      "date": "12/04/2019",
-      "numofrecords": "134,000",
-      "status": "Loaded",
-      "log": "",
-      "flag": true
-    },
-    {
-      "run#": "Run#3",
-      "date": "03/05/2019",
-      "numofrecords": "235,000",
-      "status": "Data Quality Failure",
-      "log": "",
-      "flag": false
-    },
-    {
-      "run#": "Run#4",
-      "date": "17/06/2019",
-      "numofrecords": "87,000",
-      "status": "In Progress",
-      "log": "",
-      "flag": true
-    },
-    {
-      "run#": "Run#5",
-      "date": "09/07/2019",
-      "numofrecords": "45,000",
-      "status": "Loaded",
-      "log": "",
-      "flag": true
-    }
-  ];
+    "repline_versionId": "TestVersion1",
+    "status": "InProgress",
+    "transactionStage": "HeaderValidation",
+    "updatedBy": "TestUser",
+    "updatedTime": "2019-04-08T23:31:23.563+0000",
+    "repLoanStatusDetails": [
+      {
+        "statusDetailsId": 1,
+        "statusDesc": "Header validation completed",
+        "updatedBy": "Testuser1",
+        "updatedTime": "2019-04-08T23:32:36.600+0000"
+      },
+      {
+        "statusDetailsId": 3,
+        "statusDesc": "Header validation completed 4",
+        "updatedBy": "Test user 4",
+        "updatedTime": "2019-04-04T00:55:03.330+0000"
+      },
+      {
+        "statusDetailsId": 2,
+        "statusDesc": "Header validation completed 3",
+        "updatedBy": "Test user 3",
+        "updatedTime": "2019-04-04T00:55:03.330+0000"
+      }
+    ],
+    "auditID": 1
+  }
+];

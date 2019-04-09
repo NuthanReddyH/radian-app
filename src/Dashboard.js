@@ -11,11 +11,12 @@ import { getData } from './actions.js';
 //import caretdown from './assets/images/caretdown.png';
 import HistoryTable from './components/HistoryTable/Historytable';
 import Home from './components/Home/Home';
+import { data } from './mockdata/mock';
 
 
 
 
-export class Dashboard extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,14 +30,14 @@ export class Dashboard extends Component {
     //   .then(res => {
         
     //   })
-    //this.props.getData();
+    this.props.getData();
     this.setState({
       onShow: !this.state.onShow
     })
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.props.auditData);
     return (
       <div>
       <div className="header">
@@ -51,24 +52,24 @@ export class Dashboard extends Component {
         {this.state.onShow ? <div className="iconfield"><FontAwesomeIcon className="caret" icon={faCaretUp} onClick={this.showHistory}/><div className="text">Load History</div></div> :<div className="iconfield"><FontAwesomeIcon className="caret" icon={faCaretDown} onClick={this.showHistory}/><div className="text">Load History</div></div>}
       </div>
       {this.state.onShow ? <div className="mainContainer">
-        <HistoryTable />
+        <HistoryTable auditData={data} />
         </div> : "" }
       </div>
     );
   }
 }
-export default Dashboard;
-// const mapStateToProps = state => ({
-//   auditData: state.data
-// });
-// const mapDispatchToProps = {
-//   getData
-// };
-// export default withRouter(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-//   )(Dashboard)
-// );
+// export default Dashboard;
+const mapStateToProps = state => ({
+  auditData: state.data.auditData
+});
+const mapDispatchToProps = {
+  getData
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Dashboard)
+);
 
 

@@ -10,10 +10,7 @@ class App extends Component {
     return (
       <Provider store={store}>
       <BrowserRouter>
-      <Switch>
-        <Route  exact path="/" component={Dashboard} />
-        <Route path="/details" component={AuditDetails} />
-      </Switch>
+     <Dashboard/>
         </BrowserRouter>
       </Provider>
     );

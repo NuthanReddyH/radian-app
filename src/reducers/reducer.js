@@ -5,7 +5,6 @@ const initialState = {
     auditData: []
 }
 export default function(state = initialState, action) {
-  console.log(action);
     switch (action.type) {
       case SEND_DATA:
         return {
@@ -13,7 +12,6 @@ export default function(state = initialState, action) {
           data: action.payload
         };
         case GET_AUDIT_INFO:
-        console.log(action.payload);
         return {
           
           ...state,

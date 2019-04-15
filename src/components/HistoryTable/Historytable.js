@@ -4,12 +4,11 @@ import './HistoryTable.css';
 
 
 class HistoryTable extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   showDetails = (id) => {
-    console.log("3",id);
     this.props.showDetails(id);
   }
    
@@ -24,7 +23,7 @@ class HistoryTable extends Component {
                 <td>{item.transactionStage}</td>
                 <td>{item.updatedBy}</td>
                 <td>{item.updatedTime}</td>
-                <td><button type="button" onClick={() => {this.showDetails(item.id)}}>View</button></td>
+                <td><button type="button" onClick={() => {this.showDetails(item.auditID)}}>View</button></td>
               </tr>
               )
           });

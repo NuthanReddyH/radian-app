@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
-import { Breadcrumb, BreadcrumbItem, Jumbotron, Button,Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import { Jumbotron, Button,Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import { ProgressData } from '../../mockdata/mock'
 
 
 class Home extends Component {
@@ -18,15 +19,25 @@ class Home extends Component {
   onRemove = () => {
     console.log("canceled");
   }
+  renderProgressBar = () => {
+    return this.props.auditData.map((item,i) => {
+      console.log(item.status === "InProgress");
+          if(item.status === "InProgress") {
+                return ProgressData.map((item,index) => {
+                    return (
+                        <div className={`progressbar ${item.status}`}>{item.validate}</div>
+                    )
+                })
+          }
+          return;
+    })
+    
+  }
   
   render() {
     return (
       <div>
-          <Breadcrumb>
-        <BreadcrumbItem><a href="#">Home</a></BreadcrumbItem>
-        <BreadcrumbItem >Repline</BreadcrumbItem>
-      </Breadcrumb>
-
+        <div className="bar">{this.renderProgressBar()}</div>
       <Jumbotron>
       <Form onSubmit={this.onSubmit}>
       <FormGroup row>

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import '../../Dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { getData } from '../../actions.js';
-//import caretdown from './assets/images/caretdown.png';
 import HistoryTable from '../HistoryTable/Historytable';
 import Home from '../Home/Home';
 import { data } from '../../mockdata/mock';
@@ -24,23 +22,21 @@ class Main extends Component {
   }
    
   showHistory = () => {
-      console.log("1");
     this.props.getData();
     this.setState({
       onShow: !this.state.onShow
     })
   }
   showDetails = (id) => {
-    console.log("2",id);
         this.props.history.push(`/details/${id}`);
   }
 
   render() {
-    console.log(this.props.auditData);
+    //console.log(this.props.auditData);
     return (
       <div>
       <div>
-        <Home />
+        <Home auditData={data} />
       </div>
       <div className="header1">
         

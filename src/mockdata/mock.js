@@ -28,3 +28,33 @@ export const data = [
     "auditID": 1
   }
 ];
+
+
+export const ProgressData = [
+  {
+    "validate": "File Format check" ,
+    "status": "completed"
+  },
+  {
+    "validate": "Staging Load" ,
+    "status": "completed"
+
+  },
+  {
+    "validate": "Data Quality check" ,
+    "status": "completed"
+  },
+  {
+    "validate": "Table Load" ,
+    "status": "progressLine"
+  },
+  {
+    "validate": "Bulk Test" ,
+    "status": "disable"
+  },
+  {
+    "validate": "Complete" ,
+    "status": "disable"
+  }
+]
+

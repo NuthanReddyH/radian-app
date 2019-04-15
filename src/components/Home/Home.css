@@ -16,3 +16,23 @@
 .breadcrumb {
     background-color: white !important;
 }
+.progressbar {
+    display: inline-block;
+    width: 14.66%;
+    text-align: center;
+    border: 1px solid black;
+    margin: 18px;
+    font-family: cursive;
+}
+.completed {
+    background-color: green;
+}
+.progressLine {
+    background-color: cornflowerblue;
+}
+.disable {
+    background-color: lightgrey;
+}
+.bar {
+    margin: 10px;
+}

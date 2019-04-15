@@ -7,11 +7,16 @@ class HistoryTable extends Component {
   constructor(props) {
     super(props);
   }
+
+  showDetails = (id) => {
+    console.log("3",id);
+    this.props.showDetails(id);
+  }
    
   renderTable = () => {
       
          return this.props.auditData.map((item,index) => {
-        
+              
               return (
                 <tr>
                 <th scope="row">{item.repline_versionId}</th>
@@ -19,7 +24,7 @@ class HistoryTable extends Component {
                 <td>{item.transactionStage}</td>
                 <td>{item.updatedBy}</td>
                 <td>{item.updatedTime}</td>
-                <td><button type="button">View</button></td>
+                <td><button type="button" onClick={() => {this.showDetails(item.id)}}>View</button></td>
               </tr>
               )
           });

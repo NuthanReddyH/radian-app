@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
-import { Jumbotron, Button,Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Jumbotron, Button,Form, FormGroup, Label, Input, Col} from 'reactstrap';
 import { ProgressData } from '../../mockdata/mock'
 
 
@@ -21,7 +21,6 @@ class Home extends Component {
   }
   renderProgressBar = () => {
     return this.props.auditData.map((item,i) => {
-      console.log(item.status === "InProgress");
           if(item.status === "InProgress") {
                 return ProgressData.map((item,index) => {
                     return (
@@ -30,13 +29,16 @@ class Home extends Component {
                 })
           }
           return;
-    })
-    
+    });
   }
   
   render() {
     return (
       <div>
+        <Breadcrumb>
+        <BreadcrumbItem><a href="/home">Home</a></BreadcrumbItem>
+        <BreadcrumbItem ><a href="/">Radar Rates</a></BreadcrumbItem>
+          </Breadcrumb>
         <div className="bar">{this.renderProgressBar()}</div>
       <Jumbotron>
       <Form onSubmit={this.onSubmit}>

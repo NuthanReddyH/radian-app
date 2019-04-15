@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Breadcrumb, BreadcrumbItem} from 'reactstrap';
 
 class AuditDetails extends Component {
     // constructor(props) {
@@ -10,7 +11,14 @@ class AuditDetails extends Component {
     render() {
         //console.log(this.props);
         return (
-            <div>Details</div>
+            
+            <div>
+                <Breadcrumb>
+        <BreadcrumbItem><a href="/home">Home</a></BreadcrumbItem>
+        <BreadcrumbItem ><a href="/">Radar Rates</a></BreadcrumbItem>
+        <BreadcrumbItem ><a href="/details/id">Details</a></BreadcrumbItem>
+      </Breadcrumb>
+      Details</div>
         )
     }
 }

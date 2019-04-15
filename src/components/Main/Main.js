@@ -8,6 +8,7 @@ import { getData } from '../../actions.js';
 import HistoryTable from '../HistoryTable/Historytable';
 import Home from '../Home/Home';
 import { data } from '../../mockdata/mock';
+import axios from 'axios';
 
 
 
@@ -27,12 +28,36 @@ class Main extends Component {
       onShow: !this.state.onShow
     })
   }
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    // console.log(prevProps);
+    // console.log(prevState);
+    return null;
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(this.props.auditData);
+    console.log(prevProps.auditData);
+    console.log(this.props.auditData === prevProps.auditData);
+    if(this.props.auditData ) {
+     
+          data.map((item,i) => {
+            //console.log(item);
+            if(item.status === "InProgress") {
+              //console.log("progress");
+              this.interval = setInterval(() => {
+                //axios.get(`https://jsonplaceholder.typicode.com/todos/1`)
+                //this.props.getData();
+              }, 5000);
+            }
+          })
+    }
+    
+  }
   showDetails = (id) => {
         this.props.history.push(`/details/${id}`);
   }
 
   render() {
-    //console.log(this.props.auditData);
+    console.log(this.props.auditData);
     return (
       <div>
       <div>

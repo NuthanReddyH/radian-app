@@ -8,7 +8,14 @@ import {getData} from '../../actions.js';
 import HistoryTable from '../HistoryTable/Historytable';
 import Home from '../Home/Home';
 import {data} from '../../mockdata/mock';
+//import { Button } from 'reactstrap';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import ReactExport from "react-data-export";
 //import axios from 'axios';
+
+const ExcelFile = ReactExport.ExcelFile;
+const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
+const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 
 class Main extends Component {
@@ -69,6 +76,15 @@ class Main extends Component {
                         <div className="text">Load History</div>
                     </div>
                 </div>
+                <div>
+                <ReactHTMLTableToExcel
+                    id="test-table-xls-button"
+                    className="reportButton"
+                    table="audit-table"
+                    filename="audit report"
+                    sheet="audit report"
+                    buttonText="Generate Report"/>
+                    </div>
                 {this.state.onShow ? <div className="mainContainer">
                     <HistoryTable auditData={data} showDetails={this.showDetails}/>
                 </div> : ""}

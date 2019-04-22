@@ -35,7 +35,7 @@ class HistoryTable extends Component {
 
     render() {
         return (
-            <Table>
+            <Table id="audit-table">
                 <thead>
                 <tr className="tableheader">
                     <th>VersionID</th>

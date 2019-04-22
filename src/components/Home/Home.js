@@ -15,11 +15,11 @@ class Home extends Component {
     }
 
     onSubmit(e) {
-        console.log("loaded");
+        console.log("data load");
     }
 
     onRemove = () => {
-        console.log("canceled");
+        console.log("bul load");
     };
     renderProgressBar = () => {
         return this.props.auditData.map((item) => {
@@ -58,8 +58,8 @@ class Home extends Component {
                                        defaultValue={this.state.bulkPath}/>
                             </Col>
                         </FormGroup>
-                        <Button onClick={this.onSubmit} className="loadButton" color="primary">Load</Button>
-                        <Button onClick={this.onRemove} className="cancelButton" color="primary">Cancel</Button>
+                        <Button onClick={this.onSubmit} className="loadButton" color="primary">Data Load</Button>
+                        <Button onClick={this.onRemove} className="cancelButton" color="primary">Bulk Load</Button>
                     </Form>
 
                 </Jumbotron>

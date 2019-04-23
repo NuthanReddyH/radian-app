@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import '../../Dashboard.css';
+import '../../containers/Dashboard.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCaretDown, faCaretUp} from '@fortawesome/free-solid-svg-icons';
-import {getData} from '../../actions.js';
+import {getData} from '../../actions/actions.js';
 import HistoryTable from '../HistoryTable/Historytable';
 import Home from '../Home/Home';
 import {data} from '../../mockdata/mock';

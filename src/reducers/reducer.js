@@ -1,4 +1,4 @@
-import { SEND_DATA , GET_AUDIT_INFO} from '../actions'
+import { SEND_DATA , GET_AUDIT_INFO} from '../actions/actions'
 
 const initialState = {
     data: [],

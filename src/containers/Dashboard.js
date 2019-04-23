@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import "./Dashboard.css";
 import {Switch, Route} from "react-router-dom";
 import {Navbar, NavbarBrand,NavItem,NavLink ,Nav} from "reactstrap";
-import radianLogo from "./assets/images/radian.jpg";
-import AuditDetails from "./components/Details/AuditDetails";
-import Main from "./components/Main/Main";
-import Configure from "./components/Configure/Configure";
+import radianLogo from "../assets/images/radian.jpg";
+import AuditDetails from "../components/Details/AuditDetails";
+import Main from "../components/Main/Main";
+import Configure from "../components/Configure/Configure";
 
 class Dashboard extends Component {
     toggle = () => {

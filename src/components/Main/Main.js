@@ -10,12 +10,10 @@ import Home from '../Home/Home';
 import {data} from '../../mockdata/mock';
 //import { Button } from 'reactstrap';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-import ReactExport from "react-data-export";
+
 //import axios from 'axios';
 
-const ExcelFile = ReactExport.ExcelFile;
-const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
-const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
+
 
 
 class Main extends Component {
@@ -70,20 +68,22 @@ class Main extends Component {
                 <div>
                     <Home auditData={data}/>
                 </div>
-                <div className="header1">
+                <div className="header1" onClick={this.showHistory}>
                     <div className="iconfield"><FontAwesomeIcon className="caret" icon={caret}
-                                                                onClick={this.showHistory}/>
+                                                                />
                         <div className="text">Load History</div>
+                        
                     </div>
                 </div>
                 <div>
+                
                 <ReactHTMLTableToExcel
                     id="test-table-xls-button"
                     className="reportButton"
                     table="audit-table"
                     filename="audit report"
                     sheet="audit report"
-                    buttonText="Generate Report"/>
+                    buttonText="Export"/>
                     </div>
                 {this.state.onShow ? <div className="mainContainer">
                     <HistoryTable auditData={data} showDetails={this.showDetails}/>

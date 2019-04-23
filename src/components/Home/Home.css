@@ -3,16 +3,10 @@
     width: 18%;
 }
 .replineInput {
-    width: 20% !important;
+    width: 20%;
 }
-.loadButton {
-    margin-right: 2%;
-    margin-left: 2%;
-    width: 7%;
-}
-.cancelButton {
-    width: 7%;
-}
+
+
 .breadcrumb {
     background-color: white !important;
 }
@@ -23,6 +17,11 @@
     border: 1px solid black;
     margin: 18px;
     font-family: cursive;
+}
+@media screen and (min-width:340px) and (max-width: 1024px){
+    .replineInput {
+        width: 80%;
+    }
 }
 .completed {
     background-color: green;

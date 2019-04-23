@@ -50,4 +50,11 @@ body {
 .reportButton {
     margin: 10px;
     float: right;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.excel {
+    margin: 10px;
+    float: right;
 }

@@ -51,15 +51,7 @@ class Home extends Component {
                                        defaultValue={this.state.replinePath}/>
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
-                            <Label for="bulktext" sm={1}>Bulk Test File</Label>
-                            <Col sm={10}>
-                                <Input className="replineInput" type="text" name="bulk" id="bulktext"
-                                       defaultValue={this.state.bulkPath}/>
-                            </Col>
-                        </FormGroup>
                         <Button onClick={this.onSubmit} className="loadButton" color="primary">Data Load</Button>
-                        <Button onClick={this.onRemove} className="cancelButton" color="primary">Bulk Load</Button>
                     </Form>
 
                 </Jumbotron>

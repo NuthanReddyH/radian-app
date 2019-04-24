@@ -19,6 +19,8 @@ class HistoryTable extends Component {
                     <th scope="row">{item.repline_versionId}</th>
                     <td>{item.status}</td>
                     <td>{item.transactionStage}</td>
+                    <td>{item.startTime}</td>
+                    <td>{item.endTime}</td>
                     <td>{item.updatedBy}</td>
                     <td>{item.updatedTime}</td>
                     <td>
@@ -41,6 +43,8 @@ class HistoryTable extends Component {
                     <th>VersionID</th>
                     <th>Status</th>
                     <th>Transaction Stage</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
                     <th>UpdatedBy</th>
                     <th>Updated Time</th>
                     <th>Log</th>

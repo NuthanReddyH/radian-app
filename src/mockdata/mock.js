@@ -1,9 +1,11 @@
 export const data = [
   {
-    "repline_versionId": "TestVersion1",
+    "reploan_versionId": "TestVersion1",
     "status": "Loaded",
     "transactionStage": "HeaderValidation",
     "updatedBy": "TestUser",
+    "startTime": "2019-04-08T23:31:23.563+0000",
+    "endTime": "null",
     "updatedTime": "2019-04-08T23:31:23.563+0000",
     "repLoanStatusDetails": [
       {
@@ -32,6 +34,8 @@ export const data = [
         "status": "InProgress",
         "transactionStage": "HeaderValidation",
         "updatedBy": "TestUser",
+        "startTime": "2019-04-08T23:31:23.563+0000",
+    "endTime": "null",
         "updatedTime": "2019-04-08T23:31:23.563+0000",
         "repLoanStatusDetails": [
             {

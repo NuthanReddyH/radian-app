@@ -1,3 +1,13 @@
 .list {
-    margin-bottom: 2px !important;
+    margin-bottom: 5% !important;
+    align-items: center;
+}
+.headcontainer {
+    background-color: lightskyblue;
+}
+.rowHead {
+    text-align: center;
+}
+.bodycontainer {
+    text-align: center;
 }

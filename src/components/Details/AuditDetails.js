@@ -4,6 +4,8 @@ import {
   BreadcrumbItem,
   Table,
   Input,
+  ListGroup,
+  ListGroupItem
 } from "reactstrap";
 import "./AuditDetails.css";
 
@@ -26,18 +28,29 @@ class AuditDetails extends Component {
             <a href="/details/id">Details</a>
           </BreadcrumbItem>
         </Breadcrumb>
+        <ListGroup className="list">
+          <ListGroupItem color="success">
+            Reploan Version ID: TestVersion1
+          </ListGroupItem>
+          <ListGroupItem color="success">
+            Transaction Stage: Header validation
+          </ListGroupItem>
+        </ListGroup>
         <Table bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Status</th>
+          <thead className="headcontainer">
+            <tr className="rowHead">
+              <th>Status Details ID</th>
+              <th>Audit ID</th>
+              <th>Status Description</th>
               <th>Updated By</th>
-              <th>Updated Time</th>
+              <th>Start Time</th>
+              <th>End Time</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bodycontainer">
             <tr>
-              <th scope="row">1</th>
+              <td>1</td>
+              <td>1</td>
               <td>
                 <Input
                   type="textarea"
@@ -47,9 +60,11 @@ class AuditDetails extends Component {
               </td>
               <td>Testuser1</td>
               <td>2019-04-04T00:55:03.330+0000</td>
+              <td>NULL</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
+              <td>2</td>
+              <td>1</td>
               <td>
                 <Input
                   type="textarea"
@@ -59,9 +74,11 @@ class AuditDetails extends Component {
               </td>
               <td>Test user 4</td>
               <td>2019-04-04T00:55:03.330+0000</td>
+              <td>NULL</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
+              <td>3</td>
+              <td>1</td>
               <td>
                 <Input
                   type="textarea"
@@ -71,6 +88,7 @@ class AuditDetails extends Component {
               </td>
               <td>Test user 3</td>
               <td>2019-04-04T00:55:03.330+0000</td>
+              <td>NULL</td>
             </tr>
           </tbody>
         </Table>

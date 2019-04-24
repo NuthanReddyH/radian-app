@@ -26,7 +26,7 @@ class Home extends Component {
             if (item.status === "InProgress") {
                 return ProgressData.map((item) => {
                     return (
-                        <div className={`progressbar ${item.status}`}>{item.validate}</div>
+                        <div className={`progressbar ${item.status} col-md-3 col-lg-2 col-sm-10`}>{item.validate}</div>
                     )
                 })
             }
@@ -44,13 +44,15 @@ class Home extends Component {
                 <div className="bar">{this.renderProgressBar()}</div>
                 <Jumbotron>
                     <Form onSubmit={this.onSubmit}>
-                        <FormGroup row>
+                    <div>                        <FormGroup row>
                             <Label for="replinetext" sm={1}>Repline File</Label>
-                            <Col sm={10}>
+                            <Col md={3} lg={3} sm={6}>
                                 <Input className="replineInput" type="text" name="repline" id="replinetext"
                                        defaultValue={this.state.replinePath}/>
                             </Col>
                         </FormGroup>
+                        </div>
+
                         <Button onClick={this.onSubmit} className="loadButton" color="primary">Data Load</Button>
                     </Form>
 

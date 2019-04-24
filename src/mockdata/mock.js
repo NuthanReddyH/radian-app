@@ -77,10 +77,6 @@ export const ProgressData = [
     "status": "progressLine"
   },
   {
-    "validate": "Bulk Test" ,
-    "status": "disable"
-  },
-  {
     "validate": "Complete" ,
     "status": "disable"
   }

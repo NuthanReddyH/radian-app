@@ -1,11 +1,12 @@
 export const data = [
   {
-    "reploan_versionId": "TestVersion1",
+    "repline_versionId": "TestVersion1",
     "status": "Loaded",
     "transactionStage": "HeaderValidation",
     "updatedBy": "TestUser",
     "startTime": "2019-04-08T23:31:23.563+0000",
     "endTime": "null",
+    "config_version": "Version 1",
     "updatedTime": "2019-04-08T23:31:23.563+0000",
     "repLoanStatusDetails": [
       {
@@ -32,6 +33,7 @@ export const data = [
     {
         "repline_versionId": "TestVersion1",
         "status": "InProgress",
+        "config_version": "Version 2",
         "transactionStage": "HeaderValidation",
         "updatedBy": "TestUser",
         "startTime": "2019-04-08T23:31:23.563+0000",
@@ -64,7 +66,7 @@ export const data = [
 
 export const ProgressData = [
   {
-    "validate": "File Format check" ,
+    "validate": "Structure Validation" ,
     "status": "completed"
   },
   {
@@ -73,11 +75,11 @@ export const ProgressData = [
 
   },
   {
-    "validate": "Data Quality check" ,
+    "validate": "Data Quality Checker" ,
     "status": "completed"
   },
   {
-    "validate": "Table Load" ,
+    "validate": "Rates Table Load" ,
     "status": "progressLine"
   },
   {

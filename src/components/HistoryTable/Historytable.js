@@ -17,6 +17,7 @@ class HistoryTable extends Component {
             return (
                 <tr>
                     <th scope="row">{item.repline_versionId}</th>
+                    <td>{item.config_version}</td>
                     <td>{item.status}</td>
                     <td>{item.transactionStage}</td>
                     <td>{item.startTime}</td>
@@ -40,13 +41,14 @@ class HistoryTable extends Component {
             <Table  className="col-md-12 col-lg-12 col-sm-12">
                 <thead>
                 <tr className="tableheader">
-                    <th>VersionID</th>
+                    <th>Rates Version ID</th>
+                    <th>Config Version</th>
                     <th>Status</th>
                     <th>Transaction Stage</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th>UpdatedBy</th>
-                    <th>Updated Time</th>
+                    <th>Loaded By</th>
+                    <th>Loaded Time</th>
                     <th>Log</th>
                 </tr>
                 </thead>

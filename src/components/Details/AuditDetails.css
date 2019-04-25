@@ -11,3 +11,7 @@
 .bodycontainer {
     text-align: center;
 }
+.list-group-item-success {
+    width: 20%;
+    text-align: center;
+}

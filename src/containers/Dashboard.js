@@ -12,7 +12,6 @@ class Dashboard extends Component {
 
     }
     render() {
-        //console.log(this.props.auditData);
         return (
           <div>
             <Navbar className="navcontainer" expand="md">

@@ -106,11 +106,12 @@ class Home extends Component {
                     name="select"
                     id="config"
                   >
-                  <option>Version 1</option>
-                  <option>Version2</option>
-                  <option>Version 3</option>
-                  <option>Version 4</option>
-                  <option>Version5</option></Input>
+                    <option>Version 1</option>
+                    <option>Version2</option>
+                    <option>Version 3</option>
+                    <option>Version 4</option>
+                    <option>Version5</option>
+                  </Input>
                 </Col>
               </FormGroup>
             </div>

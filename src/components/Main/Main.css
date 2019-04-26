@@ -1,0 +1,21 @@
+.page {
+  text-align: center;
+}
+.next {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.previous {
+  cursor: pointer;
+}
+.excel {
+  cursor: pointer;
+}
+@media print {
+  #home {
+    display: none;
+  }
+  #auditTable {
+    display: block;
+  }
+}

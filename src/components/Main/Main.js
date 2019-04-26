@@ -3,27 +3,23 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import "../../containers/Dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCaretDown,
-  faCaretUp
-} from "@fortawesome/free-solid-svg-icons";
+import "./Main.css";
+import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { getData } from "../../actions/actions.js";
 import HistoryTable from "../HistoryTable/Historytable";
 import Home from "../Home/Home";
 import excel from "../../assets/images/excel.png";
 import print from "../../assets/images/printer.png";
-import { data } from "../../mockdata/mock";
-//import { Button } from 'reactstrap';
-import ReactHTMLTableToExcel from "react-html-table-to-excel";
-
-//import axios from 'axios';
+import left from "../../assets/images/left.png";
+import right from "../../assets/images/right.png";
+import { data, updatedData } from "../../mockdata/mock";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       onShow: false,
-      auditData: []
+      auditData: data
     };
   }
 
@@ -34,61 +30,111 @@ class Main extends Component {
     });
   };
 
-  getSnapshotBeforeUpdate() {
-    return null;
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    // console.log(this.props.auditData);
-    // console.log(prevProps.auditData);
-    // console.log(this.props.auditData === prevProps.auditData);
-    // if (this.props.auditData) {
-    //
-    //     data.map((item, i) => {
-    //         //console.log(item);
-    //         if (item.status === "InProgress") {
-    //             //console.log("progress");
-    //             this.interval = setInterval(() => {
-    //                 //axios.get(`https://jsonplaceholder.typicode.com/todos/1`)
-    //                 //this.props.getData();
-    //             }, 5000);
-    //         }
-    //     })
-    // }
-  }
-
   showDetails = id => {
     this.props.history.push(`/details/${id}`);
+  };
+  updateTable = () => {
+    this.setState({
+      auditData: updatedData
+    });
+  };
+  prevData = () => {
+    this.setState({
+      auditData: data
+    });
+  };
+
+  printScreen = () => {
+    console.log("printed");
+    if (this.state.onShow) {
+      window.print();
+    }
+  };
+  exportTableToExcel = () => {
+    var downloadLink;
+    var dataType = "application/vnd.ms-excel";
+    var tableSelect = document.getElementById("auditTable");
+    var tableHTML = tableSelect.innerHTML.replace(/ /g, "%20");
+
+    // Specify file name
+    var filename = "auditHistory.xls";
+
+    // Create download link element
+    downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+
+    if (navigator.msSaveOrOpenBlob) {
+      var blob = new Blob(["\ufeff", tableHTML], {
+        type: dataType
+      });
+      navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
+      // Create a link to the file
+      downloadLink.href = "data:" + dataType + ", " + tableHTML;
+
+      // Setting the file name
+      downloadLink.download = filename;
+
+      //triggering the function
+      downloadLink.click();
+    }
   };
 
   render() {
     let caret = this.state.onShow ? faCaretUp : faCaretDown;
     return (
       <div>
-        <div>
+        <div id="home">
           <Home auditData={data} />
         </div>
-        <div className="header1" >
+        <div className="header1">
           <div className="iconfield">
-            <FontAwesomeIcon onClick={this.showHistory} className="caret" icon={caret} />
+            <FontAwesomeIcon
+              onClick={this.showHistory}
+              className="caret"
+              icon={caret}
+            />
             <div className="text">Load History</div>
           </div>
         </div>
         <div>
-          <img src={excel} className="excel" alt="excel" />
-          <img src={print} className="excel" alt="print" />
-          {/* <ReactHTMLTableToExcel
-            id="test-table-xls-button"
-            className="reportButton"
-            table="audit-table"
-            filename="audit report"
-            sheet="audit report"
-            buttonText="Export"
-          /> */}
+          <img
+            src={excel}
+            className="excel"
+            alt="excel"
+            onClick={this.exportTableToExcel}
+          />
+          <img
+            src={print}
+            className="excel"
+            alt="print"
+            onClick={this.printScreen}
+          />
         </div>
         {this.state.onShow ? (
-          <div className="mainContainer">
-            <HistoryTable auditData={data} showDetails={this.showDetails} />
+          <div>
+            <div className="mainContainer" id="auditTable">
+              <HistoryTable
+                auditData={this.state.auditData}
+                showDetails={this.showDetails}
+              />
+            </div>
+            <div className="page">
+              <img
+                src={left}
+                className="previous"
+                alt="left"
+                onClick={this.prevData}
+              />{" "}
+              1 of 10
+              <img
+                src={right}
+                className="next"
+                alt="right"
+                onClick={this.updateTable}
+              />
+            </div>
           </div>
         ) : (
           ""

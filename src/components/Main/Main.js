@@ -19,8 +19,11 @@ class Main extends Component {
     super(props);
     this.state = {
       onShow: false,
-      auditData: data
+      auditData: data,
+      pageNum: '1'
     };
+    this.startPage=1;
+    this.lastPage=20;
   }
 
   showHistory = () => {
@@ -34,11 +37,18 @@ class Main extends Component {
     this.props.history.push(`/details/${id}`);
   };
   updateTable = () => {
+    
+    if(this.state.pageNum < this.lastPage) {
+      this.state.pageNum++;
+    }
     this.setState({
       auditData: updatedData
     });
   };
   prevData = () => {
+    if(this.state.pageNum > this.startPage) {
+      this.state.pageNum--;
+    }
     this.setState({
       auditData: data
     });
@@ -51,6 +61,9 @@ class Main extends Component {
     }
   };
   exportTableToExcel = () => {
+    if(!this.state.onShow) {
+      return;
+    }
     var downloadLink;
     var dataType = "application/vnd.ms-excel";
     var tableSelect = document.getElementById("auditTable");
@@ -127,7 +140,7 @@ class Main extends Component {
                 alt="left"
                 onClick={this.prevData}
               />{" "}
-              1 of 10
+              {this.state.pageNum} of {this.lastPage}
               <img
                 src={right}
                 className="next"

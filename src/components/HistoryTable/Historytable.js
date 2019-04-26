@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Table, UncontrolledTooltip } from "reactstrap";
+import view from "../../assets/images/binoculars.png";
 import "./HistoryTable.css";
 
 class HistoryTable extends Component {
@@ -20,14 +21,18 @@ class HistoryTable extends Component {
           <td>{item.updatedBy}</td>
           <td>{item.updatedTime}</td>
           <td>
-            <button
-              type="button"
+            <img
+              src={view}
+              id="viewImage"
+              className="view"
+              alt="view"
               onClick={() => {
                 this.showDetails(item.auditID);
               }}
-            >
-              View
-            </button>
+            />
+            <UncontrolledTooltip placement="right" target="viewImage">
+              view
+            </UncontrolledTooltip>
           </td>
         </tr>
       );

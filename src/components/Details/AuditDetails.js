@@ -4,8 +4,10 @@ import {
   BreadcrumbItem,
   Table,
   Input,
-  ListGroup,
-  ListGroupItem
+  Form,
+  FormGroup,
+  Label,
+  Col
 } from "reactstrap";
 import "./AuditDetails.css";
 import "../../containers/Dashboard.css";
@@ -31,29 +33,120 @@ class AuditDetails extends Component {
             <a href="/details/id">Load Details</a>
           </BreadcrumbItem>
         </Breadcrumb>
-        <ListGroup className="list">
-          <ListGroupItem color="success" >
-            Reploan Version ID: TestVersion1
-          </ListGroupItem>
-          <ListGroupItem color="success">
-           Status: InProgress
-          </ListGroupItem>
-          <ListGroupItem color="success">
-           Configuration File: Version 1
-          </ListGroupItem>
-          <ListGroupItem color="success">
-          Start Time: 2019-04-04T00:55:03.330+0000
-          </ListGroupItem>
-          <ListGroupItem color="success">
-          End Time: Null
-          </ListGroupItem>
-          <ListGroupItem color="success">
-            Loaded By: TestUser
-          </ListGroupItem>
-          <ListGroupItem color="success">
-            Loaded Time: 2019-04-04T00:55:03.330+0000
-          </ListGroupItem>
-        </ListGroup>
+        <div>
+        <Form>
+            <div>
+              <FormGroup row>
+                <Label for="versionid" className="labelfield"sm={2}>
+                  Reploan Version ID
+                </Label> <Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="reploanId"
+                    id="versionid"
+                    value="TestVersion1"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label className="labelfield"for="status" sm={2}>
+                Status 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="status"
+                    id="status"
+                    disabled
+                    value="InProgress"
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label className="labelfield"for="config" sm={2}>
+                Configuration File 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="config"
+                    id="config"
+                    value="Version1"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label className="labelfield" for="startTime" sm={2}>
+                Start Time 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="startTime"
+                    id="startTime"
+                    value="2019-04-04T00:55:03.330+0000"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label  className="labelfield"for="endTime" sm={2}>
+                End Time 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="endTime"
+                    id="endTime"
+                    value="Null"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label className="labelfield" for="user" sm={2}>
+                Loaded By 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="user"
+                    id="user"
+                    value="User 1"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label className="labelfield"  for="time" sm={2}>
+                Loaded Time 
+                </Label><Label sm={0.5}>:</Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="inputfield"
+                    type="text"
+                    name="time"
+                    id="time"
+                    value="2019-04-04T00:55:03.330+0000"
+                    disabled
+                  />
+                </Col>
+              </FormGroup>
+            
+            </div>
+
+           
+          </Form>
+        </div>
         <div>
           <img src={excel} className="excel" alt="excel" />
           <img src={print} className="excel" alt="print" />

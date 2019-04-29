@@ -277,3 +277,131 @@ export const updatedData = [
       }
 ];
 
+export const XMLConfigVersions = [
+  {
+    "configId" : 1,
+    "configVersion" :1,
+    "UpdatedBy":"radian",
+    "UpdatedTime":"2019-04-08T23:32:36.600+0000"
+  },
+  {
+    "configId" : 2,
+    "configVersion" :2,
+    "UpdatedBy":"radian",
+    "UpdatedTime":"2019-04-08T23:32:36.600+0000"
+  },
+  {
+    "configId" : 3,
+    "configVersion" :3,
+    "UpdatedBy":"radian",
+    "UpdatedTime":"2019-04-08T23:32:36.600+0000"
+  },
+  {
+    "configId" : 4,
+    "configVersion" :4,
+    "UpdatedBy":"radian",
+    "UpdatedTime":"2019-04-08T23:32:36.600+0000"
+  },
+  {
+    "configId" : 5,
+    "configVersion" :5,
+    "UpdatedBy":"radian",
+    "UpdatedTime":"2019-04-08T23:32:36.600+0000"
+  }
+];
+
+
+export const xmlData = 
+	[  
+		{  
+			"ColumnNumber":"1",
+			"ColumnName":"rep_loan_id",
+			"DataType":"int"
+		},
+		{  
+			"ColumnNumber":"2",
+			"ColumnName":"amortization_period",
+			"DataType":"int"
+		},
+		{  
+			"ColumnNumber":"3",
+			"ColumnName":"mi_premium_source_type",
+			"DataType":"nvarchar(25)"
+		},
+		{  
+			"ColumnNumber":"4",
+			"ColumnName":"minimum_fico",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"5",
+			"ColumnName":"maximum_fico",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"6",
+			"ColumnName":"minimum_ltv",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"7",
+			"ColumnName":"maximum_ltv",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"8",
+			"ColumnName":"minimum_dti",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"9",
+			"ColumnName":"maximum_dti",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"10",
+			"ColumnName":"borrower_count",
+			"DataType":"tinyint"
+		},
+		{  
+			"ColumnNumber":"11",
+			"ColumnName":"unit_count",
+			"DataType":"tinyint"
+		},
+		{  
+			"ColumnNumber":"12",
+			"ColumnName":"loan_purpose_type",
+			"DataType":"nvarchar(25)"
+		},
+		{  
+			"ColumnNumber":"13",
+			"ColumnName":"property_type",
+			"DataType":"nvarchar(25)"
+		},
+		{  
+			"ColumnNumber":"14",
+			"ColumnName":"property_usage_type",
+			"DataType":"nvarchar(25)"
+		},
+		{  
+			"ColumnNumber":"15",
+			"ColumnName":"business_channel_type",
+			"DataType":"nvarchar(25)"
+		},
+		{  
+			"ColumnNumber":"16",
+			"ColumnName":"relative_upb",
+			"DataType":"decimal(5, 2)"
+		},
+		{  
+			"ColumnNumber":"17",
+			"ColumnName":"coverage_percentage",
+			"DataType":"tinyint"
+		},
+		{  
+			"ColumnNumber":"18",
+			"ColumnName":"duration_type",
+			"DataType":"nvarchar(25)"
+		}
+	];
+

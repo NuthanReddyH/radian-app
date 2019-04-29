@@ -6,6 +6,7 @@ import radianLogo from "../assets/images/radianlogo.png";
 import AuditDetails from "../components/Details/AuditDetails";
 import Main from "../components/Main/Main";
 import Configure from "../components/Configure/Configure";
+import xmlDetails from "../components/xmlDetails/xmlDetails";
 
 class Dashboard extends Component {
     toggle = () => {
@@ -13,7 +14,7 @@ class Dashboard extends Component {
     }
     render() {
         return (
-          <div>
+          <>
             <Navbar className="navcontainer" expand="md">
               <NavbarBrand>
                 <img src={radianLogo} className="logo" alt="RADIAN" />
@@ -30,14 +31,15 @@ class Dashboard extends Component {
               </Nav>
             </Navbar>
 
-            <div>
+            <>
               <Switch>
                 <Route exact path="/" component={Main} />
                 <Route exact path="/xml" component={Configure} />
                 <Route path="/details/:id" component={AuditDetails} />
+                <Route path="/xmlDetails/:id" exact component={xmlDetails}/>
               </Switch>
-            </div>
-          </div>
+            </>
+          </>
         );
     }
 }

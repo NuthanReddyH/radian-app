@@ -2,7 +2,7 @@
         align-items: center;
 }
 .headcontainer {
-    background-color: lightskyblue;
+    background-color: lightgrey;
 }
 .rowHead {
     text-align: center;
@@ -13,4 +13,14 @@
 .list-group-item-success {
     width: 20%;
     text-align: center;
+}
+.row{
+    margin-left: 1rem !important;
+}
+.labelfield {
+    /* text-align: right; */
+    font-weight: bold
+}
+.inputfield {
+    border: none !important;
 }

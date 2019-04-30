@@ -5,3 +5,6 @@
 .status {
     color: red;
 }
+.view {
+    cursor: pointer;
+}

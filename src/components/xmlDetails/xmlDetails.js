@@ -1,46 +1,53 @@
-import React, { Component } from 'react';
-import {Table} from 'reactstrap';
-import {xmlData} from '../../mockdata/mock';
+import React, { Component } from "react";
+import { Table, Button } from "reactstrap";
+import { xmlData } from "../../mockdata/mock";
+import deleteButton from "../../assets/images/cross.png";
+import './xmlDetails.css';
 
 export class xmlDetails extends Component {
-
-
-    renderXmlData = () =>{
-        return xmlData.map((item) => {
-    
-          return (
-              <tr className="mainRow">
-                  <th scope="row">{item.ColumnNumber}</th>
-                  <td>{item.ColumnName}</td>
-                  <td>{item.DataType}</td>
-                  <td>
-                      <button type="button">Delete
-                      </button>
-                  </td>
-              </tr>
-          )
-      });
-      };
-
+  renderXmlData = () => {
+    return xmlData.map(item => {
+      return (
+        <tr className="mainRow">
+          <th scope="row">{item.ColumnNumber}</th>
+          <td>{item.ColumnName}</td>
+          <td>{item.DataType}</td>
+          <td>
+            <img
+              src={deleteButton}
+              id="viewImage"
+              className="view"
+              alt="delete"
+              onClick={() => {
+                console.log("delete");
+              }}
+            />
+          </td>
+        </tr>
+      );
+    });
+  };
 
   render() {
     return (
-        <>
+      <>
+      <div className="tablecontainer">
         <Table bordered hover className="xmlConfigtable">
           <thead className="headcontainer">
-          <tr className="mainRow">
-            <th>Column Id</th>
-            <th>Column Name</th>
-            <th>Data Type</th>
-            <th></th>
+            <tr className="mainRow">
+              <th>Column Id</th>
+              <th>Column Name</th>
+              <th>Data Type</th>
+              <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
-             {this.renderXmlData()}
-          </tbody>
+          <tbody>{this.renderXmlData()}</tbody>
         </Table>
+        
+      </div>
+      <Button className="addButton" color="primary">Add</Button>
       </>
-    )
+    );
   }
 }
 

@@ -95,27 +95,7 @@ class Home extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
-                <Label for="config" sm={1}>
-                  Configuration File
-                </Label>
-                <Col md={3} lg={1} sm={6}>
-                  <Input
-                    className="config"
-                    type="select"
-                    name="select"
-                    id="config"
-                  >
-                    <option>Version 1</option>
-                    <option>Version2</option>
-                    <option>Version 3</option>
-                    <option>Version 4</option>
-                    <option>Version5</option>
-                  </Input>
-                </Col>
-              </FormGroup>
             </div>
-
             <Button
               onClick={this.onSubmit}
               disabled={validation}

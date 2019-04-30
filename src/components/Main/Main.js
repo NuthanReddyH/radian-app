@@ -20,10 +20,10 @@ class Main extends Component {
     this.state = {
       onShow: false,
       auditData: data,
-      pageNum: '1'
+      pageNum: "1"
     };
-    this.startPage=1;
-    this.lastPage=20;
+    this.startPage = 1;
+    this.lastPage = 20;
   }
 
   showHistory = () => {
@@ -37,8 +37,7 @@ class Main extends Component {
     this.props.history.push(`/details/${id}`);
   };
   updateTable = () => {
-    
-    if(this.state.pageNum < this.lastPage) {
+    if (this.state.pageNum < this.lastPage) {
       this.state.pageNum++;
     }
     this.setState({
@@ -46,7 +45,7 @@ class Main extends Component {
     });
   };
   prevData = () => {
-    if(this.state.pageNum > this.startPage) {
+    if (this.state.pageNum > this.startPage) {
       this.state.pageNum--;
     }
     this.setState({
@@ -61,7 +60,7 @@ class Main extends Component {
     }
   };
   exportTableToExcel = () => {
-    if(!this.state.onShow) {
+    if (!this.state.onShow) {
       return;
     }
     var downloadLink;

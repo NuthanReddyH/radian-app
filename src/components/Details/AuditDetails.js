@@ -34,12 +34,13 @@ class AuditDetails extends Component {
           </BreadcrumbItem>
         </Breadcrumb>
         <div>
-        <Form>
+          <Form>
             <div>
-              <FormGroup row>
-                <Label for="versionid" className="labelfield"sm={2}>
+              <FormGroup className="formfield" row>
+                <Label for="versionid" className="labelfield" sm={2}>
                   Reploan Version ID
-                </Label> <Label sm={0.5}>:</Label>
+                </Label>{" "}
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -51,10 +52,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
-                <Label className="labelfield"for="status" sm={2}>
-                Status 
-                </Label><Label sm={0.5}>:</Label>
+              <FormGroup className="formfield" row>
+                <Label className="labelfield" for="status" sm={2}>
+                  Status
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -66,10 +68,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
-                <Label className="labelfield"for="config" sm={2}>
-                Configuration File 
-                </Label><Label sm={0.5}>:</Label>
+              <FormGroup className="formfield" row>
+                <Label className="labelfield" for="config" sm={2}>
+                  Configuration File
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -81,10 +84,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
+              <FormGroup className="formfield" row>
                 <Label className="labelfield" for="startTime" sm={2}>
-                Start Time 
-                </Label><Label sm={0.5}>:</Label>
+                  Start Time
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -96,10 +100,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
-                <Label  className="labelfield"for="endTime" sm={2}>
-                End Time 
-                </Label><Label sm={0.5}>:</Label>
+              <FormGroup className="formfield" row>
+                <Label className="labelfield" for="endTime" sm={2}>
+                  End Time
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -111,10 +116,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
+              <FormGroup className="formfield" row>
                 <Label className="labelfield" for="user" sm={2}>
-                Loaded By 
-                </Label><Label sm={0.5}>:</Label>
+                  Loaded By
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -126,10 +132,11 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup row>
-                <Label className="labelfield"  for="time" sm={2}>
-                Loaded Time 
-                </Label><Label sm={0.5}>:</Label>
+              <FormGroup className="formfield" row>
+                <Label className="labelfield" for="time" sm={2}>
+                  Loaded Time
+                </Label>
+                <Label sm={0.5}>:</Label>
                 <Col md={3} lg={3} sm={6}>
                   <Input
                     className="inputfield"
@@ -141,10 +148,7 @@ class AuditDetails extends Component {
                   />
                 </Col>
               </FormGroup>
-            
             </div>
-
-           
           </Form>
         </div>
         <div>

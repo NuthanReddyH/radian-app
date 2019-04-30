@@ -1,0 +1,10 @@
+.tablecontainer {
+    height: 700px;
+    overflow-y: scroll;
+}
+.addButton {
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+    width: 5%;
+}

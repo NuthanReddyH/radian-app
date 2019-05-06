@@ -1,10 +1,20 @@
 .tablecontainer {
-    height: 700px;
-    overflow-y: scroll;
+  height: 700px;
+  overflow-y: scroll;
 }
 .addButton {
-    float: right;
-    margin-right: 30px;
-    margin-top: 30px;
-    width: 5%;
+  float: right;
+  margin: 30px;
+  width: 5%;
+}
+.table > thead > tr > th,
+.table > thead > tr > td { 
+    background-color: #51596a;
+}
+.table thead th {
+    position: sticky;
+    top: 0;
+}
+.modal-content {
+    width: 120% !important;
 }

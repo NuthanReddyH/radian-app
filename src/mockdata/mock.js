@@ -6,6 +6,7 @@ export const data = [
     updatedBy: "TestUser",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
+    duration: "7:00 minutes",
     config_version: "Version 1",
     updatedTime: "2019-04-08T23:31:23.563+0000",
     repLoanStatusDetails: [
@@ -38,6 +39,7 @@ export const data = [
     updatedBy: "TestUser",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
+    duration: "7:00 minutes",
     updatedTime: "2019-04-08T23:31:23.563+0000",
     repLoanStatusDetails: [
       {
@@ -81,6 +83,10 @@ export const ProgressData = [
     status: "progressLine"
   },
   {
+    validate: "Bulk Load",
+    status: "disable"
+  },
+  {
     validate: "Complete",
     status: "disable"
   }
@@ -94,6 +100,7 @@ export const updatedData = [
     updatedBy: "TestUser",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
+    duration: "7:00 minutes",
     config_version: "Version 1",
     updatedTime: "2019-04-08T23:31:23.563+0000",
     repLoanStatusDetails: [
@@ -122,6 +129,7 @@ export const updatedData = [
     repline_versionId: "TestVersion1",
     status: "Loaded",
     config_version: "Version 2",
+    duration: "15:00 minutes",
     transactionStage: "HeaderValidation",
     updatedBy: "TestUser",
     startTime: "2019-04-08T23:31:23.563+0000",
@@ -155,6 +163,7 @@ export const updatedData = [
     config_version: "Version 2",
     transactionStage: "HeaderValidation",
     updatedBy: "TestUser",
+    duration: "2:00 minutes",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
     updatedTime: "2019-04-08T23:31:23.563+0000",
@@ -187,6 +196,7 @@ export const updatedData = [
     updatedBy: "TestUser",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
+    duration: "7:00 minutes",
     config_version: "Version 1",
     updatedTime: "2019-04-08T23:31:23.563+0000",
     repLoanStatusDetails: [
@@ -217,6 +227,7 @@ export const updatedData = [
     config_version: "Version 2",
     transactionStage: "HeaderValidation",
     updatedBy: "TestUser",
+    duration: "9:00 minutes",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
     updatedTime: "2019-04-08T23:31:23.563+0000",
@@ -248,6 +259,7 @@ export const updatedData = [
     config_version: "Version 2",
     transactionStage: "HeaderValidation",
     updatedBy: "TestUser",
+    duration: "5:00 minutes",
     startTime: "2019-04-08T23:31:23.563+0000",
     endTime: "null",
     updatedTime: "2019-04-08T23:31:23.563+0000",
@@ -278,31 +290,31 @@ export const updatedData = [
 export const XMLConfigVersions = [
   {
     configId: 1,
-    configVersion: 1,
+    configVersion: "version 1",
     UpdatedBy: "radian",
     UpdatedTime: "2019-04-08T23:32:36.600+0000"
   },
   {
     configId: 2,
-    configVersion: 2,
+    configVersion: "version 2",
     UpdatedBy: "radian",
     UpdatedTime: "2019-04-08T23:32:36.600+0000"
   },
   {
     configId: 3,
-    configVersion: 3,
+    configVersion: "version 3",
     UpdatedBy: "radian",
     UpdatedTime: "2019-04-08T23:32:36.600+0000"
   },
   {
     configId: 4,
-    configVersion: 4,
+    configVersion: "version 1.4",
     UpdatedBy: "radian",
     UpdatedTime: "2019-04-08T23:32:36.600+0000"
   },
   {
     configId: 5,
-    configVersion: 5,
+    configVersion: "version 5",
     UpdatedBy: "radian",
     UpdatedTime: "2019-04-08T23:32:36.600+0000"
   }

@@ -18,3 +18,7 @@
 .modal-content {
     width: 120% !important;
 }
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
+}

@@ -18,6 +18,7 @@ class HistoryTable extends Component {
           <td>{item.transactionStage}</td>
           <td>{item.startTime}</td>
           <td>{item.endTime}</td>
+          <td>{item.duration}</td>
           <td>{item.updatedBy}</td>
           <td>{item.updatedTime}</td>
           <td>
@@ -50,6 +51,7 @@ class HistoryTable extends Component {
             <th>Transaction Stage</th>
             <th>Start Time</th>
             <th>End Time</th>
+            <th>Duration</th>
             <th>Loaded By</th>
             <th>Loaded Time</th>
             <th>Log</th>

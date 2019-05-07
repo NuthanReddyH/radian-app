@@ -18,14 +18,19 @@ class Home extends Component {
     super(props);
     this.state = {
       replinePath: "/repline folder/Repline_file",
+      bulkPath: "/repline folder/bulk_test_file",
       dropdownOpen: false,
       version: "version 1"
     };
     this.onSubmit = this.onSubmit.bind(this);
+    this.loadBulkFile = this.loadBulkFile.bind(this)
   }
 
   onSubmit(e) {
     console.log("data load");
+  }
+  loadBulkFile() {
+    console.log("load bulk file")
   }
 
   renderProgressBar = () => {
@@ -95,6 +100,20 @@ class Home extends Component {
                   />
                 </Col>
               </FormGroup>
+              <FormGroup row>
+                <Label for="bulktext" sm={1}>
+                  Bulk Test File
+                </Label>
+                <Col md={3} lg={3} sm={6}>
+                  <Input
+                    className="replineInput"
+                    type="text"
+                    name="bulk"
+                    id="bulktext"
+                    defaultValue={this.state.bulkPath}
+                  />
+                </Col>
+              </FormGroup>
             </div>
             <Button
               onClick={this.onSubmit}
@@ -103,6 +122,13 @@ class Home extends Component {
               color={validation ? "secondary" : "primary"}
             >
               Data Load
+            </Button>
+            <Button
+              onClick={this.loadBulkFile}
+              className="loadButton"
+              color="primary"
+            >
+              Bulk Load
             </Button>
           </Form>
         </Jumbotron>

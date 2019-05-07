@@ -1,8 +1,10 @@
 import React from "react";
 import { XMLConfigVersions } from "../../mockdata/mock";
-import { Table } from "reactstrap";
+import { Table,Breadcrumb,
+  BreadcrumbItem, } from "reactstrap";
 import view from "../../assets/images/binoculars.png";
 import "./Configure.css";
+import Print from "../Common/Print";
 
 export default class Configure extends React.Component {
   showXmlConfig = configId => {
@@ -15,8 +17,7 @@ export default class Configure extends React.Component {
     return XMLConfigVersions.map(item => {
       return (
         <tr className="mainRow">
-          <th scope="row">{item.configId}</th>
-          <td>{item.configVersion}</td>
+           <td>{item.configVersion}</td>
           <td>{item.UpdatedBy}</td>
           <td>{item.UpdatedTime}</td>
           <td>
@@ -38,11 +39,19 @@ export default class Configure extends React.Component {
   render() {
     return (
       <div>
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/">Home</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="/xml">Configure XML</a>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <Print />
         <Table bordered hover className="xmlConfigtable">
           <thead className="headcontainer">
             <tr className="mainRow">
-              <th>Config Id</th>
-              <th>Config Version</th>
+               <th>Config Version</th>
               <th>Updated By</th>
               <th>Updated Time</th>
               <th>Log</th>

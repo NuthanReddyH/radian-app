@@ -10,11 +10,15 @@ import {
   Form,
   FormGroup,
   Label,
-  Col
+  Col,
+  Breadcrumb,
+  BreadcrumbItem
 } from "reactstrap";
 import { xmlData } from "../../mockdata/mock";
 import deleteButton from "../../assets/images/cross.png";
+import edit from "../../assets/images/pencil.png";
 import "./xmlDetails.css";
+import Print from "../Common/Print";
 
 export class xmlDetails extends Component {
   constructor(props) {
@@ -53,15 +57,25 @@ export class xmlDetails extends Component {
           <td>{item.ColumnName}</td>
           <td>{item.DataType}</td>
           <td>
+          <img
+              src={edit}
+              id="viewImage"
+              className="edit"
+              alt="edit"
+              onClick={() => {
+                console.log("edit");
+              }}
+            />
             <img
               src={deleteButton}
               id="viewImage"
-              className="view"
+              className="edit"
               alt="delete"
               onClick={() => {
                 console.log("delete");
               }}
             />
+            
           </td>
         </tr>
       );
@@ -78,11 +92,23 @@ export class xmlDetails extends Component {
   render() {
     return (
       <>
+      <Breadcrumb>
+          <BreadcrumbItem>
+            <a href="/">Home</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="/xml">Configure XML</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <a href="/xmlDetails/id">XML file</a>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        
         <div className="tablecontainer">
           <Table bordered hover>
             <thead className="headcontainer">
               <tr className="mainRow">
-                <th>Column Id</th>
+                <th>Column Number</th>
                 <th>Column Name</th>
                 <th>Data Type</th>
                 <th>Delete</th>

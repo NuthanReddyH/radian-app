@@ -13,6 +13,7 @@ import "./AuditDetails.css";
 import "../../containers/Dashboard.css";
 import excel from "../../assets/images/excel.png";
 import print from "../../assets/images/printer.png";
+import Print from "../Common/Print";
 
 class AuditDetails extends Component {
   componentDidMount() {
@@ -151,25 +152,22 @@ class AuditDetails extends Component {
             </div>
           </Form>
         </div>
-        <div>
-          <img src={excel} className="excel" alt="excel" />
-          <img src={print} className="excel" alt="print" />
-        </div>
+       <Print />
         <Table bordered hover>
           <thead className="headcontainer">
             <tr className="rowHead">
               <th>Status Details ID</th>
-              <th>Audit ID</th>
               <th>Status Description</th>
               <th>Loaded By</th>
               <th>Start Time</th>
               <th>End Time</th>
+              <th>Duration</th>
             </tr>
           </thead>
           <tbody className="bodycontainer">
             <tr>
               <td>1</td>
-              <td>1</td>
+
               <td>
                 <Input
                   type="textarea"
@@ -181,10 +179,10 @@ class AuditDetails extends Component {
               <td>Testuser1</td>
               <td>2019-04-04T00:55:03.330+0000</td>
               <td>NULL</td>
+              <td>12:00 min</td>
             </tr>
             <tr>
               <td>2</td>
-              <td>1</td>
               <td>
                 <Input
                   type="textarea"
@@ -196,10 +194,10 @@ class AuditDetails extends Component {
               <td>Test user 4</td>
               <td>2019-04-04T00:55:03.330+0000</td>
               <td>NULL</td>
+              <td>13:00 min</td>
             </tr>
             <tr>
               <td>3</td>
-              <td>1</td>
               <td>
                 <Input
                   type="textarea"
@@ -211,6 +209,7 @@ class AuditDetails extends Component {
               <td>Test user 3</td>
               <td>2019-04-04T00:55:03.330+0000</td>
               <td>NULL</td>
+              <td>9:00 min</td>
             </tr>
           </tbody>
         </Table>

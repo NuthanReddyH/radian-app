@@ -69,7 +69,7 @@ class Main extends Component {
             <div className="text">Load History</div>
           </div>
         </div>
-        <Print />
+        <Print onShow={this.state.onShow} />
         {this.state.onShow ? (
           <div>
             <div className="mainContainer" id="auditTable">

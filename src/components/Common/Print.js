@@ -5,25 +5,22 @@ import print from "../../assets/images/printer.png";
 class Print extends Component {
   printScreen = () => {
     console.log("printed");
-    if (this.state.onShow) {
+    if (this.props.onShow) {
       window.print();
     }
   };
   exportTableToExcel = () => {
-    if (!this.state.onShow) {
+    if (!this.props.onShow) {
       return;
     }
     var downloadLink;
     var dataType = "application/vnd.ms-excel";
     var tableSelect = document.getElementById("auditTable");
     var tableHTML = tableSelect.innerHTML.replace(/ /g, "%20");
-
     // Specify file name
     var filename = "auditHistory.xls";
-
     // Create download link element
     downloadLink = document.createElement("a");
-
     document.body.appendChild(downloadLink);
 
     if (navigator.msSaveOrOpenBlob) {
@@ -32,12 +29,10 @@ class Print extends Component {
       });
       navigator.msSaveOrOpenBlob(blob, filename);
     } else {
-      // Create a link to the file
+       // Create a link to the file
       downloadLink.href = "data:" + dataType + ", " + tableHTML;
-
       // Setting the file name
       downloadLink.download = filename;
-
       //triggering the function
       downloadLink.click();
     }

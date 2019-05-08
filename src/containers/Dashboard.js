@@ -7,6 +7,7 @@ import AuditDetails from "../components/Details/AuditDetails";
 import Main from "../components/Main/Main";
 import Configure from "../components/Configure/Configure";
 import xmlDetails from "../components/xmlDetails/xmlDetails";
+import StartPage from "../components/StartPage/StartPage";
 
 class Dashboard extends Component {
   toggle = () => {};
@@ -19,7 +20,7 @@ class Dashboard extends Component {
           </NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/">Data Load</NavLink>
+              <NavLink href="/home">Data Load</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/xml">Configure XML</NavLink>
@@ -29,7 +30,8 @@ class Dashboard extends Component {
 
         <>
           <Switch>
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={StartPage} />
+            <Route exact path="/home" component={Main} />
             <Route exact path="/xml" component={Configure} />
             <Route path="/details/:id" component={AuditDetails} />
             <Route path="/xmlDetails/:id" exact component={xmlDetails} />

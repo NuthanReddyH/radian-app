@@ -26,6 +26,7 @@ export class xmlDetails extends Component {
     this.state = {
       modal: false,
       colName: "",
+      colNum: 0,
       dataType: ""
     };
   }
@@ -37,7 +38,7 @@ export class xmlDetails extends Component {
   };
   addRow = () => {
     xmlData.push({
-      ColumnNumber: xmlData.length + 1,
+      ColumnNumber: this.state.colNum,
       ColumnName: this.state.colName,
       DataType: this.state.dataType
     });
@@ -53,10 +54,7 @@ export class xmlDetails extends Component {
     return xmlData.map(item => {
       return (
         <tr className="mainRow">
-          <th scope="row">{item.ColumnNumber}</th>
-          <td>{item.ColumnName}</td>
-          <td>{item.DataType}</td>
-          <td>
+        <th scope="row">
           <img
               src={edit}
               id="viewImage"
@@ -65,8 +63,13 @@ export class xmlDetails extends Component {
               onClick={() => {
                 console.log("edit");
               }}
-            />
-            <img
+            />     
+          </th>
+          <td>{item.ColumnNumber}</td>
+          <td>{item.ColumnName}</td>
+          <td>{item.DataType}</td>
+          <td>
+              <img
               src={deleteButton}
               id="viewImage"
               className="edit"
@@ -85,13 +88,17 @@ export class xmlDetails extends Component {
   addColName = e => {
     this.setState({ colName: e.target.value });
   };
+  addColNum = e => {
+    this.setState({ colNum: e.target.value });
+  };
   addDataType = e => {
     this.setState({ dataType: e.target.value });
   };
 
   render() {
     return (
-      <>
+      <div>
+      <div id="invisible">
       <Breadcrumb>
           <BreadcrumbItem>
             <a href="/">Home</a>
@@ -103,11 +110,12 @@ export class xmlDetails extends Component {
             <a href="/xmlDetails/id">XML file</a>
           </BreadcrumbItem>
         </Breadcrumb>
-        
-        <div className="tablecontainer">
-          <Table bordered hover>
+        <Print onShow={true}/></div>
+        <div className="tablecontainer" id="xmlTable" >
+          <Table bordered hover >
             <thead className="headcontainer">
               <tr className="mainRow">
+                <th>Edit</th>
                 <th>Column Number</th>
                 <th>Column Name</th>
                 <th>Data Type</th>
@@ -117,7 +125,7 @@ export class xmlDetails extends Component {
             <tbody>{this.renderXmlData()}</tbody>
           </Table>
         </div>
-        <Button className="addButton" color="primary" onClick={this.toggle}>
+        <Button id="invisible" className="addButton" color="primary" onClick={this.toggle}>
           Add
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -138,6 +146,22 @@ export class xmlDetails extends Component {
                       id="colName"
                       value={this.state.colName}
                       onChange={this.addColName}
+                    />
+                  </Col>
+                </FormGroup>
+                <FormGroup className="formfield" row>
+                  <Label for="colNum" className="labelfield" sm={3}>
+                    Column Name
+                  </Label>{" "}
+                  <Label sm={0.5}>:</Label>
+                  <Col md={3} lg={5} sm={6}>
+                    <Input
+                      className="modalfield"
+                      type="number"
+                      name="colNum"
+                      id="colNum"
+                      value={this.state.colNum}
+                      onChange={this.addColNum}
                     />
                   </Col>
                 </FormGroup>
@@ -169,7 +193,7 @@ export class xmlDetails extends Component {
             </Button>
           </ModalFooter>
         </Modal>
-      </>
+      </div>
     );
   }
 }

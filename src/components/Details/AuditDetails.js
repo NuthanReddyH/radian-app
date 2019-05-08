@@ -11,8 +11,6 @@ import {
 } from "reactstrap";
 import "./AuditDetails.css";
 import "../../containers/Dashboard.css";
-import excel from "../../assets/images/excel.png";
-import print from "../../assets/images/printer.png";
 import Print from "../Common/Print";
 
 class AuditDetails extends Component {
@@ -23,7 +21,7 @@ class AuditDetails extends Component {
   render() {
     return (
       <div>
-        <Breadcrumb>
+        <Breadcrumb id="invisible">
           <BreadcrumbItem>
             <a href="/">Home</a>
           </BreadcrumbItem>
@@ -34,7 +32,7 @@ class AuditDetails extends Component {
             <a href="/details/id">Load Details</a>
           </BreadcrumbItem>
         </Breadcrumb>
-        <div>
+        <div id="invisible">
           <Form>
             <div>
               <FormGroup className="formfield" row>
@@ -152,8 +150,8 @@ class AuditDetails extends Component {
             </div>
           </Form>
         </div>
-       <Print />
-        <Table bordered hover>
+        <div id="invisible" ><Print  onShow={true} /></div>
+        <Table id="auditTable" bordered hover >
           <thead className="headcontainer">
             <tr className="rowHead">
               <th>Status Details ID</th>

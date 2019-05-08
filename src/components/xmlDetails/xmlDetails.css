@@ -30,3 +30,9 @@
     display: block;
   }
 }
+.excelStyle {
+  margin-left: 95%;
+}
+.print {
+  margin: 10px;
+}

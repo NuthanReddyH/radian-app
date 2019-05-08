@@ -38,17 +38,18 @@ class Print extends Component {
     }
   };
   render() {
+    let style = this.props.style ? 'excelStyle' : 'excel';
     return (
       <div>
         <img
           src={excel}
-          className="excel"
+          className={style}
           alt="excel"
           onClick={this.exportTableToExcel}
         />
         <img
           src={print}
-          className="excel"
+          className={this.props.style ? `print` : `excel`}
           alt="print"
           onClick={this.printScreen}
         />

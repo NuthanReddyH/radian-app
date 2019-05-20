@@ -38,7 +38,7 @@ class Print extends Component {
     }
   };
   render() {
-    let style = this.props.style ? 'excelStyle' : 'excel';
+    let style = this.props.styleValue ? 'excelStyle' : 'excel';
     return (
       <div>
         <img

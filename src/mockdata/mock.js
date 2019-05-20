@@ -412,3 +412,7 @@ export const xmlData = [
     DataType: "nvarchar(25)"
   }
 ];
+
+
+export const textData = 'Business provides Radar Rates data file along with bulk test file at a shared location for a new version of data to be deployed.Radar Rates are provided in an excel document which contains multiple sheets. The file contains the 1 Million records of data as of today and can grow further with more coverages and factors.The file contains two sections of columns. First section contains condition columns (~18) which helps to identify the right rate record and second section base rates (tier rates).Bulk Test file contains the records of test cases (rows of sampled data with expected result) to test the loaded Radar Rates Data'
+

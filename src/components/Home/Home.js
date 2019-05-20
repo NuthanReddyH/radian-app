@@ -53,13 +53,15 @@ class Home extends Component {
   };
   ValidateButton = () => {
     let value = false;
-    this.props.auditData.filter(item => {
+     this.props.auditData.filter(item => {
       if (item.status === "InProgress") {
         value = true;
       }
+      
     });
-
     return value;
+
+   
   };
   toggle = () => {
     this.setState(prevState => ({

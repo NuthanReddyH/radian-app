@@ -110,10 +110,10 @@ export class xmlDetails extends Component {
             <a href="/xmlDetails/id">XML file</a>
           </BreadcrumbItem>
         </Breadcrumb>
-        <Print onShow={true} style={true}/></div>
+        <Print onShow={true} styleValue={true}/></div>
         <div className="tablecontainer" id="xmlTable" >
           <Table bordered hover >
-            <thead className="headcontainer">
+            <thead>
               <tr className="mainRow">
                 <th>Edit</th>
                 <th>Column Number</th>

@@ -9,9 +9,9 @@ class HistoryTable extends Component {
   };
 
   renderTable = () => {
-    return this.props.auditData.map(item => {
+    return this.props.auditData.map((item,index) => {
       return (
-        <tr>
+        <tr key={index}>
           <th scope="row">{item.repline_versionId}</th>
           <td>{item.config_version}</td>
           <td>{item.status}</td>

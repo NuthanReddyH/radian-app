@@ -15,6 +15,7 @@ class Dashboard extends Component {
     return (
       <>
         <Navbar className="navcontainer" expand="md">
+        
           <NavbarBrand>
             <img src={radianLogo} className="logo" alt="RADIAN" />
           </NavbarBrand>

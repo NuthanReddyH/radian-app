@@ -49,7 +49,7 @@ class Print extends Component {
         />
         <img
           src={print}
-          className={this.props.style ? `print` : `excel`}
+          className={this.props.styleValue ? `print` : `excel`}
           alt="print"
           onClick={this.printScreen}
         />
